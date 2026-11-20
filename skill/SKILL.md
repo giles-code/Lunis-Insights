@@ -5,7 +5,7 @@ description: Publish a Lunis Partners insight (Future Finance daily brief, weekl
 
 # Lunis Insights publisher
 
-You publish articles to the Lunis Partners website. Articles live in the GitHub repo **giles-code/Lunis-Insights**. The website (`insights.html` for the list, `insight.html?c=<CODE>` for an article) reads the feed that the repo builds, so nothing on Wix needs changing for a new article.
+You publish articles to the Lunis Partners website. Articles live in the GitHub repo **giles-code/Lunis-Insights**. The website (`insights.html` for the list, `ffr-edition.html?c=<CODE>` for an article) reads the feed that the repo builds, so nothing on Wix needs changing for a new article.
 
 The submitter only supplies the details and the text. You do everything else: code, file, front matter, PDF, validation, commit, and the share link.
 
@@ -79,7 +79,7 @@ node scripts/build.mjs          # must print ✓; fix every ✗ it reports
 ## 7. Report back
 
 Give the share link and the reference code:
-`https://<site>/insight.html?c=<CODE>` (on the preview site today: `https://headless-szfaokhodwa-gilesswan-1409.wix-site-host.com/insight.html?c=<CODE>`).
+`https://<site>/ffr-edition.html?c=<CODE>` (on the preview site today: `https://headless-szfaokhodwa-gilesswan-1409.wix-site-host.com/ffr-edition.html?c=<CODE>`).
 It appears on the site within about five minutes, which is how long GitHub's raw-file cache takes to refresh.
 
 ## Corrections and withdrawals

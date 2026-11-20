@@ -14,7 +14,7 @@ articles/<publication year>/<id>/
 | File | Used by | Contents |
 |---|---|---|
 | `dist/index.json` | `insights.html` | taxonomy, counts, and one card per published article (newest first), with sequence (previous/next), parent and children |
-| `dist/articles/<CODE>.json` | `insight.html?c=<CODE>` | the card plus rendered `html`, `toc`, `highlights`, `keyDates`, `sources` |
+| `dist/articles/<CODE>.json` | `ffr-edition.html?c=<CODE>` | the card plus rendered `html`, `toc`, `highlights`, `keyDates`, `sources` |
 | `dist/key-dates.json` | "Coming up" panel | future key dates across all published articles, de-duplicated |
 
 ## Article types
@@ -27,7 +27,7 @@ articles/<publication year>/<id>/
 | `insight` | Standalone article | any lower-case slug | `INS-NNNN` (next free number) | — |
 
 The **code** is the permanent public reference. The share link is
-`https://<site>/insight.html?c=FFM-2610`. The build rejects a duplicate or a code that doesn't match the rule. Never change or reuse a published code.
+`https://<site>/ffr-edition.html?c=FFM-2610`. The build rejects a duplicate or a code that doesn't match the rule. Never change or reuse a published code.
 
 **Sequencing.** Items of the same series and type are numbered by date. Each page links to the previous and next item. A daily brief can name its weekly edition in `parent`, and a weekly edition can name its monthly report. The parent page then lists everything it "brings together".
 

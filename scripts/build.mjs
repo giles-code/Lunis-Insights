@@ -158,7 +158,7 @@ const cards = published.map((a) => {
     jurisdictions: fm.jurisdictions || [], topics: fm.topics || [], practice: fm.practice || null,
     authors: (fm.authors || []).map((k) => taxonomy.authors.find((x) => x.key === k)),
     featured: !!fm.featured, parent: fm.parent || null,
-    url: `insight.html?c=${fm.code}`,
+    url: `ffr-edition.html?c=${fm.code}`,
     pdfUrl: fm.pdf ? fileUrl(a, fm.pdf) : null,
     image: fm.image ? (/^https:/.test(fm.image) ? fm.image : fileUrl(a, fm.image)) : null,
     highlightCount: (fm.highlights || []).length,

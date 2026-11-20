@@ -152,14 +152,14 @@ tr { break-inside:avoid; }
     ${coverage ? `<dt>Coverage:</dt><dd>${esc(coverage)}</dd>` : ''}
     <dt>Reference:</dt><dd>${esc(fm.code)}</dd>
   </dl>
-  <div class="note"><b>Public edition.</b> General information on regulatory developments, not legal or regulatory advice for any particular firm.${fm.legacy?.originalBrand ? ` First published by ${esc(fm.legacy.originalBrand)}; republished by Lunis Partners.` : ''}<br>Online: lunispartners.com/insight.html?c=${esc(fm.code)}</div>
+  <div class="note"><b>Public edition.</b> General information on regulatory developments, not legal or regulatory advice for any particular firm.${fm.legacy?.originalBrand ? ` First published by ${esc(fm.legacy.originalBrand)}; republished by Lunis Partners.` : ''}<br>Online: lunispartners.com/ffr-edition.html?c=${esc(fm.code)}</div>
 </section>
 ${toc.length > 3 ? `<section class="contents"><h2 class="major">Contents</h2>${tocHtml}</section>` : ''}
 <main><div style="color:#45544A;font-size:3pt;line-height:3pt;height:3pt;margin-bottom:-3pt">LUNISMAINSTART</div>
   ${!hasExec ? `<p style="font-size:11pt;line-height:1.55">${esc(fm.summary)}</p>` : ''}
   ${highlights}
   ${html}
-  <p class="end">© ${fm.date.slice(0, 4)} Lunis Partners. This public edition is general information on regulatory developments. It is not legal or regulatory advice for any particular firm; check primary sources before acting. Reference ${esc(fm.code)} · lunispartners.com/insight.html?c=${esc(fm.code)}</p>
+  <p class="end">© ${fm.date.slice(0, 4)} Lunis Partners. This public edition is general information on regulatory developments. It is not legal or regulatory advice for any particular firm; check primary sources before acting. Reference ${esc(fm.code)} · lunispartners.com/ffr-edition.html?c=${esc(fm.code)}</p>
 </main></body></html>`;
 }
 
