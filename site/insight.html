@@ -36,7 +36,8 @@
 .ia-toc ol { list-style:none; margin:0; padding:0; }
 .ia-toc li { margin:0; }
 .ia-toc a { display:block; padding:5px 0 5px 10px; border-left:2px solid var(--ia-rule); color:#374151; text-decoration:none; line-height:1.35; }
-.ia-toc a.l3 { padding-left:20px; font-size:12px; color:var(--ia-muted); }
+.ia-toc a.l3 { padding-left:20px; font-size:12px; color:var(--ia-muted); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.ia-legacy { font-size:13px; color:var(--ia-muted); margin:-8px 0 18px; }
 .ia-toc a.on { border-left-color:var(--ia-accent); color:var(--ia-ink); font-weight:600; }
 .ia-hls { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin:0 0 36px; }
 .ia-hl { border:1px solid var(--ia-rule); border-top:3px solid var(--ia-low); border-radius:var(--ia-radius); padding:14px 16px; font-size:14px; line-height:1.5; }
@@ -159,6 +160,7 @@
       '<h1>' + esc(a.title) + '</h1>' + (a.subtitle ? '<p class="sub">' + esc(a.subtitle) + '</p>' : '') +
       (hasExec ? '' : '<p class="ia-summary">' + esc(a.summary) + '</p>') +
       '<div class="ia-facts">' + facts + '</div>' +
+      (a.legacy && a.legacy.originalBrand ? '<p class="ia-legacy">First published by ' + esc(a.legacy.originalBrand) + '. Republished by Lunis Partners as a public edition.</p>' : '') +
       '<div class="ia-actions">' + (a.pdfUrl ? '<a class="ia-btn primary" href="' + esc(a.pdfUrl) + '" download="Lunis-' + esc(a.code) + '.pdf">Download PDF</a>' : '') +
       '<button type="button" class="ia-btn" id="ia-copy">Copy link</button></div></header>' +
       '<div class="ia-layout">' + toc + '<div>' + hls + '<article class="ia-body">' + a.html + '</article>' +
