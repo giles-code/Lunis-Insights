@@ -72,7 +72,8 @@ node scripts/build.mjs          # must print ✓; fix every ✗ it reports
 
 - Look at page 1 and one inner page of the PDF (`pdftoppm -r 50 -png -f 1 -l 2`) to check the layout.
 - Show the submitter: the title, code, summary, highlight count, the files touched, and anything you removed under step 5. Get a yes before pushing. Skip this only if they said to publish without review.
-- Commit to `main`: `Add FFD-261119: Future Finance Daily — 19 November 2026`. Include `dist/`. Push.
+- Commit to `main`: `Add FFD-261119: Future Finance Daily — 19 November 2026`. Include `dist/`. Run `git pull --rebase` first, because the GitHub Action sometimes adds its own commit. Then push.
+- If the push is declined for email privacy, commit as `giles-code <318535383+giles-code@users.noreply.github.com>`.
 - If Chrome isn't available, commit without the PDF but keep `pdf:` in the front matter. The GitHub Action renders missing PDFs and rebuilds `dist/`.
 
 ## 7. Report back

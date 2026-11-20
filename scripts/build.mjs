@@ -208,7 +208,7 @@ if (!CHECK_ONLY) {
   const counts = { total: cards.length, byType: {} };
   for (const t of taxonomy.types) counts.byType[t.key] = cards.filter((c) => c.type === t.key).length;
   const index = {
-    version: '1', generated: new Date().toISOString(), base: RAW,
+    version: '1', generated: published[0]?.fm.date || null, base: RAW,
     taxonomy, counts, items: cards,
   };
   fs.writeFileSync(path.join(dist, 'index.json'), JSON.stringify(index));
