@@ -103,7 +103,7 @@
     var period = a.period ? short(a.period.start).replace(/ \d{4}$/, '') + ' – ' + short(a.period.end) : '';
     var chips = (a.jurisdictions || []).map(function (j) { return '<span class="ffr-chip">' + esc(label(tx, 'jurisdictions', j)) + '</span>'; }).join('');
     var hero = '<section class="ffr-dark ffr-hero"><div class="wrap">' +
-      '<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Lunis Partners</a><span>/</span><a href="insights.html">Insights</a><span>/</span><a href="' + HUB + '">' + esc(series ? series.title : 'Insights') + '</a><span>/</span><span>' + esc(a.edition || a.title) + '</span></nav>' +
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Lunis Partners</a><span>/</span><a href="insights.html">Insights</a><span>/</span><a href="insights.html?type=' + esc(a.type) + '">' + esc(series ? series.title : 'Insights') + '</a><span>/</span><span>' + esc(a.edition || a.title) + '</span></nav>' +
       '<div class="ffr-hero-grid"><div>' +
       '<div style="display:flex;align-items:center;gap:.8rem">' + MARK + '<span class="ffr-kicker">' + esc(series ? series.title : typeLabel) + ' · ' + esc(typeLabel) + (a.sequence ? ' · No. ' + a.sequence.number : '') + '</span></div>' +
       '<h1>' + (a.edition ? esc(series ? series.title : a.title).replace(/(Report|Brief|Edition)$/, '<em>$1</em>') + '<br>' + esc(a.edition) : esc(a.title)) + '</h1>' +
