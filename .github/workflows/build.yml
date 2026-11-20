@@ -1,0 +1,36 @@
+name: Validate and build feed
+
+on:
+  push:
+    branches: [main]
+    paths: ['articles/**', 'taxonomy.json', 'schema/**', 'scripts/**']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Render any PDFs named in front matter but not yet in the repo
+        run: CHROME=$(which google-chrome || which chromium) node scripts/pdf.mjs --missing
+      - name: Validate and build dist/
+        run: node scripts/build.mjs
+      - name: Commit rebuilt feed (main only)
+        if: github.event_name != 'pull_request'
+        run: |
+          if [ -n "$(git status --porcelain dist articles)" ]; then
+            git config user.name "lunis-insights-bot"
+            git config user.email "actions@users.noreply.github.com"
+            git add dist articles
+            git commit -m "Rebuild feed and PDFs [skip ci]"
+            git push
+          else
+            echo "dist/ already up to date"
+          fi

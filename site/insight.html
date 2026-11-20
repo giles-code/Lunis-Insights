@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insight | Lunis Partners</title>
+<meta name="description" content="Regulatory intelligence from Lunis Partners.">
+<!--
+  LUNIS INSIGHTS — single article page.  URL: insight.html?c=<CODE>  (also accepts ?id=<id>)
+  Wix session: create this as a new page using the site's header and footer.
+  Put everything between the INSIGHT-ARTICLE markers in the page body, and copy the
+  <style> and <script> blocks marked INSIGHT-ARTICLE as they are.
+-->
+<style id="insight-article-css">
+/* INSIGHT-ARTICLE CSS START */
+.ia-wrap { --ia-ink:#14213d; --ia-accent:#8a6d3b; --ia-muted:#6b7280; --ia-rule:#e5e7eb; --ia-bg:#faf9f6; --ia-high:#9b2c2c; --ia-med:#b7791f; --ia-low:#4a5568; --ia-radius:4px;
+  --ia-serif: var(--font-serif, Lora, Georgia, serif); --ia-sans: var(--font-sans, Inter, system-ui, sans-serif);
+  font-family:var(--ia-sans); color:#1f2937; max-width:1200px; margin:0 auto; padding:24px 24px 72px; }
+.ia-crumb { font-size:13px; color:var(--ia-muted); margin:0 0 24px; }
+.ia-crumb a { color:var(--ia-muted); text-decoration:none; } .ia-crumb a:hover { color:var(--ia-ink); }
+.ia-head { border-bottom:1px solid var(--ia-rule); padding-bottom:28px; margin-bottom:32px; }
+.ia-kicker { display:flex; flex-wrap:wrap; gap:10px; align-items:center; font:600 12px var(--ia-sans); letter-spacing:.14em; text-transform:uppercase; color:var(--ia-accent); }
+.ia-kicker .seq { color:var(--ia-muted); }
+.ia-head h1 { font:500 clamp(30px,4.2vw,48px)/1.1 var(--ia-serif); color:var(--ia-ink); margin:12px 0 12px; }
+.ia-head .sub { font:italic 20px/1.4 var(--ia-serif); color:#374151; margin:0 0 14px; }
+.ia-summary { font:18px/1.6 var(--ia-serif); color:#374151; max-width:820px; margin:0 0 20px; }
+.ia-facts { display:flex; flex-wrap:wrap; gap:8px 24px; font-size:14px; color:var(--ia-muted); margin:0 0 22px; }
+.ia-facts b { color:var(--ia-ink); font-weight:600; }
+.ia-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.ia-btn { display:inline-flex; align-items:center; gap:8px; padding:11px 20px; border-radius:999px; font:600 14px var(--ia-sans); text-decoration:none; cursor:pointer; border:1px solid var(--ia-ink); background:#fff; color:var(--ia-ink); }
+.ia-btn.primary { background:var(--ia-ink); color:#fff; }
+.ia-btn:hover { opacity:.9; }
+.ia-layout { display:grid; grid-template-columns:240px minmax(0,1fr); gap:48px; }
+.ia-toc { position:sticky; top:24px; align-self:start; max-height:calc(100vh - 48px); overflow:auto; font-size:13px; }
+.ia-toc h5, .ia-side-h { font:600 11px var(--ia-sans); letter-spacing:.16em; text-transform:uppercase; color:var(--ia-muted); margin:0 0 10px; }
+.ia-toc ol { list-style:none; margin:0; padding:0; }
+.ia-toc li { margin:0; }
+.ia-toc a { display:block; padding:5px 0 5px 10px; border-left:2px solid var(--ia-rule); color:#374151; text-decoration:none; line-height:1.35; }
+.ia-toc a.l3 { padding-left:20px; font-size:12px; color:var(--ia-muted); }
+.ia-toc a.on { border-left-color:var(--ia-accent); color:var(--ia-ink); font-weight:600; }
+.ia-hls { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin:0 0 36px; }
+.ia-hl { border:1px solid var(--ia-rule); border-top:3px solid var(--ia-low); border-radius:var(--ia-radius); padding:14px 16px; font-size:14px; line-height:1.5; }
+.ia-hl.High { border-top-color:var(--ia-high); } .ia-hl.Medium { border-top-color:var(--ia-med); }
+.ia-hl .tag { display:block; font:600 11px var(--ia-sans); letter-spacing:.1em; text-transform:uppercase; color:var(--ia-muted); margin-bottom:6px; }
+.ia-body { font-size:16.5px; line-height:1.7; max-width:820px; }
+.ia-body h2 { font:500 30px/1.2 var(--ia-serif); color:var(--ia-ink); margin:48px 0 16px; padding-top:8px; border-top:1px solid var(--ia-rule); scroll-margin-top:24px; }
+.ia-body h2:first-child { margin-top:0; border-top:0; padding-top:0; }
+.ia-body h3 { font:600 20px/1.35 var(--ia-sans); color:var(--ia-ink); margin:36px 0 12px; scroll-margin-top:24px; }
+.ia-body p { margin:0 0 14px; }
+.ia-body ul, .ia-body ol { padding-left:22px; margin:0 0 16px; } .ia-body li { margin:6px 0; }
+.ia-body blockquote { margin:0 0 18px; padding:12px 16px; background:var(--ia-bg); border-left:3px solid var(--ia-accent); font-size:15px; }
+.ia-body blockquote p { margin:0; }
+.ia-body a { color:#1d4ed8; text-underline-offset:2px; word-break:break-word; }
+.li-table, .ia-body .li-table { overflow-x:auto; margin:8px 0 24px; }
+.ia-body table { width:100%; border-collapse:collapse; font-size:14px; line-height:1.45; }
+.ia-body th { text-align:left; background:var(--ia-ink); color:#fff; padding:9px 10px; font-weight:600; position:sticky; top:0; }
+.ia-body td { border-bottom:1px solid var(--ia-rule); padding:9px 10px; vertical-align:top; }
+.ia-rel { margin:48px 0 0; padding:24px; background:var(--ia-bg); border-radius:var(--ia-radius); max-width:820px; }
+.ia-rel h4 { font:500 20px var(--ia-serif); color:var(--ia-ink); margin:0 0 12px; }
+.ia-rel ul { list-style:none; margin:0; padding:0; } .ia-rel li { padding:6px 0; border-top:1px solid var(--ia-rule); font-size:15px; }
+.ia-rel a { color:var(--ia-ink); }
+.ia-seq { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:32px 0 0; max-width:820px; }
+.ia-seq a { display:block; padding:16px 18px; border:1px solid var(--ia-rule); border-radius:var(--ia-radius); text-decoration:none; color:var(--ia-ink); }
+.ia-seq a:hover { border-color:var(--ia-ink); }
+.ia-seq .k { font:600 11px var(--ia-sans); letter-spacing:.12em; text-transform:uppercase; color:var(--ia-muted); }
+.ia-seq .t { display:block; margin-top:4px; font:500 17px/1.3 var(--ia-serif); }
+.ia-seq .next { text-align:right; grid-column:2; }
+.ia-legal { margin:40px 0 0; font-size:13px; color:var(--ia-muted); max-width:820px; }
+.ia-toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--ia-ink); color:#fff; padding:10px 18px; border-radius:999px; font-size:14px; opacity:0; transition:opacity .2s; pointer-events:none; }
+.ia-toast.on { opacity:1; }
+.ia-msg { padding:60px 0; text-align:center; color:var(--ia-muted); }
+@media (max-width: 960px) { .ia-layout { grid-template-columns:1fr; } .ia-toc { position:static; max-height:none; border:1px solid var(--ia-rule); border-radius:var(--ia-radius); padding:14px; } .ia-toc a.l3 { display:none; } }
+@media print { .ia-toc, .ia-actions, .ia-seq, .ia-crumb { display:none; } .ia-layout { display:block; } }
+/* INSIGHT-ARTICLE CSS END */
+</style>
+</head>
+<body>
+
+<!-- INSIGHT-ARTICLE START -->
+<div class="ia-wrap" id="ia-root">
+  <nav class="ia-crumb" id="ia-crumb"><a href="index.html">Lunis Partners</a> / <a href="insights.html">Insights</a></nav>
+  <div id="ia-content"><p class="ia-msg">Loading…</p></div>
+</div>
+<div class="ia-toast" id="ia-toast" role="status">Link copied</div>
+<!-- INSIGHT-ARTICLE END -->
+
+<script id="insight-article-js">
+/* INSIGHT-ARTICLE JS START */
+(function () {
+  var FEED = 'https://raw.githubusercontent.com/giles-code/Lunis-Insights/main/dist/';
+  var LIST_PAGE = 'insights.html';
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var fmt = function (d, o) { var p = d.split('-'); return new Date(Date.UTC(+p[0], +p[1] - 1, +(p[2] || 1))).toLocaleDateString('en-GB', Object.assign({ timeZone: 'UTC' }, o || { day: 'numeric', month: 'long', year: 'numeric' })); };
+  var params = new URLSearchParams(location.search);
+  var code = (params.get('c') || params.get('code') || '').trim().toUpperCase();
+  var id = (params.get('id') || '').trim();
+  var get = function (u) { return fetch(u, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }); };
+
+  function fail(msg) {
+    $('ia-content').innerHTML = '<div class="ia-msg"><p>' + msg + '</p><p><a class="ia-btn" href="' + LIST_PAGE + '">Browse all insights</a></p></div>';
+  }
+
+  var load;
+  if (/^[A-Z]{3}-\d{4,6}$/.test(code)) load = get(FEED + 'articles/' + code + '.json');
+  else if (id) load = get(FEED + 'index.json').then(function (d) {
+    var hit = d.items.filter(function (i) { return i.id === id; })[0];
+    if (!hit) throw new Error('404');
+    history.replaceState(null, '', location.pathname + '?c=' + hit.code);
+    return get(FEED + 'articles/' + hit.code + '.json');
+  });
+  else return fail('No article reference was given.');
+
+  Promise.all([load, get(FEED + 'index.json').catch(function () { return null; })]).then(function (r) { show(r[0], r[1]); })
+    .catch(function (e) { fail(String(e.message) === '404' ? 'We could not find an article with reference <b>' + esc(code || id) + '</b>.' : 'This article is unavailable at the moment. Please try again shortly.'); });
+
+  function show(a, index) {
+    var tx = index ? index.taxonomy : null;
+    var label = function (k, v) { if (!tx) return v; var x = tx[k].filter(function (i) { return i.key === v; })[0]; return x ? x.label : v; };
+    var typeLabel = label('types', a.type);
+    var series = tx && a.series ? tx.series.filter(function (s) { return s.key === a.series; })[0] : null;
+
+    document.title = a.title + ' | Lunis Partners';
+    var md = document.querySelector('meta[name="description"]'); if (md) md.setAttribute('content', a.summary);
+    var canon = location.origin + location.pathname + '?c=' + a.code;
+
+    $('ia-crumb').innerHTML = '<a href="index.html">Lunis Partners</a> / <a href="' + LIST_PAGE + '">Insights</a>' +
+      (series ? ' / <a href="' + LIST_PAGE + '?type=' + a.type + '">' + esc(series.title) + '</a>' : '') + ' / ' + esc(a.code);
+
+    var hasExec = /<h2[^>]*>Executive Summary<\/h2>/i.test(a.html);
+    var facts = '<span><b>Published</b> ' + fmt(a.date) + '</span>' +
+      (a.period ? '<span><b>Covers</b> ' + fmt(a.period.start, { day: 'numeric', month: 'short' }) + ' – ' + fmt(a.period.end, { day: 'numeric', month: 'short', year: 'numeric' }) + '</span>' : '') +
+      (a.readingMinutes ? '<span><b>Reading time</b> ' + a.readingMinutes + ' min</span>' : '') +
+      (a.jurisdictions.length ? '<span><b>Coverage</b> ' + esc(a.jurisdictions.map(function (j) { return label('jurisdictions', j); }).join(' · ')) + '</span>' : '') +
+      '<span><b>Reference</b> ' + esc(a.code) + '</span>';
+
+    var hls = (!hasExec && a.highlights.length) ? '<div class="ia-hls">' + a.highlights.map(function (h) {
+      return '<div class="ia-hl ' + h.materiality + '"><span class="tag">' + esc(h.materiality) + ' · ' + esc(label('jurisdictions', h.jurisdiction)) + '</span>' + esc(h.text) + '</div>';
+    }).join('') + '</div>' : '';
+
+    var toc = a.toc.length > 2 ? '<nav class="ia-toc" aria-label="Contents"><h5>Contents</h5><ol>' + a.toc.map(function (t) {
+      return '<li><a class="l' + t.level + '" href="#' + t.id + '">' + esc(t.text) + '</a></li>';
+    }).join('') + '</ol></nav>' : '<div></div>';
+
+    var rel = '';
+    if (a.parent) rel += '<h4>Part of</h4><ul><li><a href="' + esc(a.parent.url) + '">' + esc(a.parent.title) + '</a> · ' + esc(a.parent.code) + '</li></ul>';
+    if (a.children && a.children.length) rel += '<h4' + (a.parent ? ' style="margin-top:18px"' : '') + '>Brings together</h4><ul>' + a.children.map(function (c) {
+      return '<li><a href="' + esc(c.url) + '">' + esc(c.edition || c.title) + '</a> · ' + fmt(c.date, { day: 'numeric', month: 'short' }) + ' · ' + esc(c.code) + '</li>';
+    }).join('') + '</ul>';
+
+    var seq = (a.prev || a.next) ? '<div class="ia-seq">' +
+      (a.prev ? '<a href="' + esc(a.prev.url) + '"><span class="k">← Previous ' + esc(typeLabel.toLowerCase()) + '</span><span class="t">' + esc(a.prev.edition || a.prev.title) + '</span></a>' : '') +
+      (a.next ? '<a class="next" href="' + esc(a.next.url) + '"><span class="k">Next ' + esc(typeLabel.toLowerCase()) + ' →</span><span class="t">' + esc(a.next.edition || a.next.title) + '</span></a>' : '') +
+      '</div>' : '';
+
+    $('ia-content').innerHTML =
+      '<header class="ia-head"><div class="ia-kicker"><span>' + esc(series ? series.title : 'Insight') + (series ? ' · ' + esc(typeLabel) : '') + '</span>' +
+      (a.sequence ? '<span class="seq">No. ' + a.sequence.number + '</span>' : '') + '</div>' +
+      '<h1>' + esc(a.title) + '</h1>' + (a.subtitle ? '<p class="sub">' + esc(a.subtitle) + '</p>' : '') +
+      (hasExec ? '' : '<p class="ia-summary">' + esc(a.summary) + '</p>') +
+      '<div class="ia-facts">' + facts + '</div>' +
+      '<div class="ia-actions">' + (a.pdfUrl ? '<a class="ia-btn primary" href="' + esc(a.pdfUrl) + '" download="Lunis-' + esc(a.code) + '.pdf">Download PDF</a>' : '') +
+      '<button type="button" class="ia-btn" id="ia-copy">Copy link</button></div></header>' +
+      '<div class="ia-layout">' + toc + '<div>' + hls + '<article class="ia-body">' + a.html + '</article>' +
+      (rel ? '<section class="ia-rel">' + rel + '</section>' : '') + seq +
+      '<p class="ia-legal">This publication is general information on regulatory developments. It is not legal or regulatory advice for any particular firm. © ' + a.date.slice(0, 4) + ' Lunis Partners.</p></div></div>';
+
+    $('ia-copy').onclick = function () {
+      var done = function () { var t = $('ia-toast'); t.classList.add('on'); setTimeout(function () { t.classList.remove('on'); }, 1600); };
+      if (navigator.clipboard) navigator.clipboard.writeText(canon).then(done, function () { prompt('Copy this link', canon); });
+      else prompt('Copy this link', canon);
+    };
+
+    if (location.hash) { var el = document.getElementById(location.hash.slice(1)); if (el) el.scrollIntoView(); }
+    var links = [].slice.call(document.querySelectorAll('.ia-toc a'));
+    if (links.length && 'IntersectionObserver' in window) {
+      var map = {}; links.forEach(function (l) { map[l.getAttribute('href').slice(1)] = l; });
+      var io = new IntersectionObserver(function (es) {
+        es.forEach(function (e) { if (e.isIntersecting && map[e.target.id]) { links.forEach(function (l) { l.classList.remove('on'); }); map[e.target.id].classList.add('on'); } });
+      }, { rootMargin: '0px 0px -75% 0px' });
+      document.querySelectorAll('.ia-body h2[id], .ia-body h3[id]').forEach(function (h) { io.observe(h); });
+    }
+  }
+})();
+/* INSIGHT-ARTICLE JS END */
+</script>
+</body>
+</html>

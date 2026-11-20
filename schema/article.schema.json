@@ -1,0 +1,281 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/giles-code/Lunis-Insights/main/schema/article.schema.json",
+  "title": "Lunis Insights article front matter",
+  "description": "YAML front matter at the top of articles/<yyyy>/<id>/index.md. The Markdown body follows the closing ---. Values for type, series, jurisdictions, topics, practice and authors must exist in taxonomy.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "code",
+    "type",
+    "title",
+    "date",
+    "summary",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 90,
+      "description": "Permanent URL key and folder name. Series items use the series idPrefix plus the period: future-finance-daily-2026-11-19, future-finance-weekly-2026-w47, future-finance-monthly-2026-11. Never change after publication."
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^(FFD-\\d{6}|FFW-\\d{4}|FFM-\\d{4}|INS-\\d{4})$",
+      "description": "Short shareable code, unique across the repo, used in links: insight.html?c=FFM-2610. Daily FFD-YYMMDD (FFD-261119); weekly FFW-YYWW using the ISO week (FFW-2647); monthly FFM-YYMM for the month covered (FFM-2610); standalone insight INS-NNNN, the next free number. Never reuse or change."
+    },
+    "type": {
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly",
+        "insight"
+      ]
+    },
+    "series": {
+      "type": "string",
+      "description": "Series key from taxonomy.json. Required for daily, weekly and monthly; omit for a standalone insight."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 140
+    },
+    "subtitle": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "edition": {
+      "type": "string",
+      "maxLength": 60,
+      "description": "Short edition label shown on cards, e.g. 'October 2026', 'Week 47, 2026', 'Thursday 19 November 2026'."
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Publication date (YYYY-MM-DD). Drives ordering."
+    },
+    "period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date"
+        },
+        "end": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "description": "Review window covered. Required for weekly and monthly."
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 40,
+      "maxLength": 420,
+      "description": "Card and meta-description text. Plain text, two or three sentences."
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true,
+      "maxItems": 8
+    },
+    "practice": {
+      "enum": [
+        "advisory",
+        "governance",
+        "training"
+      ]
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "parent": {
+      "type": "string",
+      "description": "id of the consolidating edition: a daily points to its weekly, a weekly to its monthly. May be added after the parent is published."
+    },
+    "highlights": {
+      "type": "array",
+      "maxItems": 10,
+      "description": "Headline items shown as cards at the top of the page.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "materiality",
+          "jurisdiction",
+          "text"
+        ],
+        "properties": {
+          "materiality": {
+            "enum": [
+              "High",
+              "Medium",
+              "Low"
+            ]
+          },
+          "jurisdiction": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 400
+          },
+          "anchor": {
+            "type": "string",
+            "description": "Heading anchor in the body this highlight links to."
+          }
+        }
+      }
+    },
+    "keyDates": {
+      "type": "array",
+      "description": "Dated deadlines and events. Feed the article's horizon table and the site-wide upcoming-dates list.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "date",
+          "jurisdiction",
+          "event"
+        ],
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$",
+            "description": "YYYY-MM-DD, or YYYY-MM when only the month is known."
+          },
+          "jurisdiction": {
+            "type": "string"
+          },
+          "event": {
+            "type": "string",
+            "maxLength": 300
+          },
+          "source": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "url"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "pdf": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9._-]+\\.pdf$",
+      "description": "PDF file name in the same folder, offered as a download."
+    },
+    "image": {
+      "type": "string",
+      "description": "Optional card image: file name in the same folder or an absolute https URL."
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "published",
+        "withdrawn"
+      ],
+      "description": "Only published items appear in the feed."
+    },
+    "legacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "originalBrand": {
+          "type": "string"
+        },
+        "originalTitle": {
+          "type": "string"
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "series",
+          "edition"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "type": {
+            "enum": [
+              "weekly",
+              "monthly"
+            ]
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "period"
+        ]
+      }
+    }
+  ]
+}
