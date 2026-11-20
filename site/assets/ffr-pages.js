@@ -1,14 +1,14 @@
 /* Future Finance Report for the Lunis Partners site.
  * Reads the Lunis Insights feed on GitHub and renders, depending on what the page contains:
  *   #ffr-article  → one edition (insight.html?c=FFM-2610)
- *   #ffr-hub      → the Future Finance Report hub (future-finance.html)
+ *   #ffr-hub      → the Future Finance Report hub (ffr.html — only if the page uses #ffr-hub)
  *   #home-ffr     → the report band in the home page "What we think" section
  * On post.html it also redirects old blog posts of the monthly report to the matching edition page.
- * Needs assets/ffr.css. Uses the site's styles.css classes (.wrap, .btn, .facts, .crumbs, .eyebrow …). */
+ * Needs assets/ffr-pages.css. Uses the site's styles.css classes (.wrap, .btn, .facts, .crumbs, .eyebrow …). */
 (function () {
   'use strict';
   var FEED = 'https://raw.githubusercontent.com/giles-code/Lunis-Insights/main/dist/';
-  var ARTICLE = 'insight.html', HUB = 'future-finance.html';
+  var ARTICLE = 'insight.html', HUB = 'ffr.html';
   var MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
   var MAJOR = /^(Executive Summary|Contents|Also noted|Horizon|Priority|Decide|DORA and MiCA|Verification|Sources|Notes|Methodology)/i;
   var MARK = '<svg class="ffr-mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M44 9a24 24 0 1 1-24 0" fill="none" stroke="#DDC07A" stroke-width="3.4" stroke-linecap="round"/><path d="M33 22c-5 4 6 9 1 16" fill="none" stroke="#DDC07A" stroke-width="2" stroke-linecap="round"/></svg>';
@@ -31,7 +31,7 @@
   }
   function editionCard(c, tx) {
     var type = label(tx, 'types', c.type);
-    return '<a class="ffr-card" href="' + esc(c.url) + '"><div class="top"><span class="ffr-kicker">' + esc(type) + ' · ' + esc(c.code) + '</span><h3>' + esc(c.edition || c.title) + '</h3></div>' +
+    return '<a class="ffr-card" href="' + esc(c.url) + '"><div class="top"><span class="ffr-kicker">' + esc(type) + '</span><h3>' + esc(c.edition || c.title) + '</h3></div>' +
       '<div class="body"><p>' + esc(c.summary) + '</p><div class="foot"><span>' + short(c.date) + (c.readingMinutes ? ' · ' + c.readingMinutes + ' min' : '') + '</span><span class="link-arrow">Read &rarr;</span></div></div></a>';
   }
 
@@ -101,13 +101,13 @@
     var period = a.period ? short(a.period.start).replace(/ \d{4}$/, '') + ' – ' + short(a.period.end) : '';
     var chips = (a.jurisdictions || []).map(function (j) { return '<span class="ffr-chip">' + esc(label(tx, 'jurisdictions', j)) + '</span>'; }).join('');
     var hero = '<section class="ffr-dark ffr-hero"><div class="wrap">' +
-      '<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Lunis Partners</a><span>/</span><a href="insights.html">Insights</a><span>/</span><a href="' + HUB + '">' + esc(series ? series.title : 'Insights') + '</a><span>/</span><span>' + esc(a.code) + '</span></nav>' +
+      '<nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Lunis Partners</a><span>/</span><a href="insights.html">Insights</a><span>/</span><a href="' + HUB + '">' + esc(series ? series.title : 'Insights') + '</a><span>/</span><span>' + esc(a.edition || a.title) + '</span></nav>' +
       '<div class="ffr-hero-grid"><div>' +
       '<div style="display:flex;align-items:center;gap:.8rem">' + MARK + '<span class="ffr-kicker">' + esc(series ? series.title : typeLabel) + ' · ' + esc(typeLabel) + (a.sequence ? ' · No. ' + a.sequence.number : '') + '</span></div>' +
       '<h1>' + (a.edition ? esc(series ? series.title : a.title).replace(/(Report|Brief|Edition)$/, '<em>$1</em>') + '<br>' + esc(a.edition) : esc(a.title)) + '</h1>' +
       '<p class="sub">' + esc(series ? series.strapline : '') + '</p>' +
       '<div class="ffr-meta"><span><b>Published</b>' + short(a.date) + '</span>' + (period ? '<span><b>Review window</b>' + period + '</span>' : '') +
-      (a.readingMinutes ? '<span><b>Reading time</b>' + a.readingMinutes + ' min</span>' : '') + '<span><b>Reference</b>' + esc(a.code) + '</span></div>' +
+      (a.readingMinutes ? '<span><b>Reading time</b>' + a.readingMinutes + ' min</span>' : '') + '</div>' +
       '<div>' + chips + '</div>' +
       '<div class="ffr-actions">' + (a.pdfUrl ? '<a class="btn btn-gold" href="' + esc(a.pdfUrl) + '">Download the PDF</a>' : '') +
       '<button type="button" class="btn ffr-btn-light" data-copy>Copy link</button></div>' +
@@ -118,8 +118,8 @@
       return '<li><a class="l' + t.level + '" href="#' + t.id + '">' + esc(t.text) + '</a></li>'; }).join('') + '</ol></nav>' : '';
     var editions = idx ? idx.items.filter(function (i) { return i.series === a.series && i.type === a.type; }) : [];
     var picker = editions.length > 1 ? '<div class="ffr-editions"><select aria-label="Go to another edition">' + editions.map(function (e) {
-      return '<option value="' + esc(e.url) + '"' + (e.code === a.code ? ' selected' : '') + '>' + esc(e.edition || e.title) + ' · ' + esc(e.code) + '</option>'; }).join('') + '</select></div>' : '';
-    var side = '<aside class="ffr-side"><div class="facts"><dl style="margin:0"><dt style="margin-top:0">Reference code</dt><dd><div class="ffr-ref">' + esc(a.code) + '<button type="button" data-copy>Copy link</button></div></dd></dl>' +
+      return '<option value="' + esc(e.url) + '"' + (e.code === a.code ? ' selected' : '') + '>' + esc(e.edition || e.title) + '</option>'; }).join('') + '</select></div>' : '';
+    var side = '<aside class="ffr-side"><div class="facts"><dl style="margin:0"><dt style="margin-top:0">This edition</dt><dd><div class="ffr-ref">' + esc(a.edition || a.title) + '<button type="button" data-copy>Copy link</button></div></dd></dl>' +
       (a.pdfUrl ? '<a class="btn btn-gold" href="' + esc(a.pdfUrl) + '">Download PDF</a>' : '') + '</div>' + picker + toc + '</aside>';
 
     var seq = (a.prev || a.next) ? '<div class="ffr-seq">' +
@@ -132,7 +132,7 @@
     var more = editions.filter(function (e) { return e.code !== a.code; }).slice(0, 3);
     root.innerHTML = hero +
       '<section class="bg-white ffr-body"><div class="wrap"><div class="ffr-layout"><div><article class="ffr-prose">' + html + '</article>' + related + seq +
-      '<p class="ffr-end">This public edition is general information on regulatory developments. It is not legal or regulatory advice for any particular firm; check primary sources before acting. &copy; ' + a.date.slice(0, 4) + ' Lunis Partners. Reference ' + esc(a.code) + '.</p>' +
+      '<p class="ffr-end">This public edition is general information on regulatory developments. It is not legal or regulatory advice for any particular firm; check primary sources before acting. &copy; ' + a.date.slice(0, 4) + ' Lunis Partners.</p>' +
       '<div class="btn-row"><a class="btn btn-ghost" href="' + HUB + '">&larr; All editions</a><a class="btn btn-gold" href="contact.html">Talk to us about this</a></div></div>' + side + '</div></div></section>' +
       (more.length ? '<section class="bg-cream"><div class="wrap"><div class="section-head"><h2>More <em>editions</em></h2><a class="link-arrow" href="' + HUB + '">All editions &rarr;</a></div><div class="grid g3">' + more.map(function (c) { return editionCard(c, tx); }).join('') + '</div></div></section>' : '');
 
@@ -162,14 +162,14 @@
         '<nav class="crumbs" aria-label="Breadcrumb" style="color:rgba(255,255,255,.7)"><a href="index.html" style="color:#fff">Lunis Partners</a><span>/</span><a href="insights.html" style="color:#fff">Insights</a><span>/</span><span>' + esc(s.title) + '</span></nav>' +
         '<div style="display:flex;align-items:center;gap:.8rem">' + MARK + '<span class="ffr-kicker">' + esc(s.strapline) + '</span></div>' +
         '<h1>Future Finance <em>Report</em></h1><p class="lead">' + esc(s.description) + '</p>' +
-        (latest ? '<div class="ffr-latest"><div><span class="ffr-kicker">Latest · ' + esc(label(tx, 'types', latest.type)) + ' · ' + esc(latest.code) + '</span><h2>' + esc(latest.edition || latest.title) + '</h2><p>' + esc(latest.summary) + '</p>' +
+        (latest ? '<div class="ffr-latest"><div><span class="ffr-kicker">Latest · ' + esc(label(tx, 'types', latest.type)) + '</span><h2>' + esc(latest.edition || latest.title) + '</h2><p>' + esc(latest.summary) + '</p>' +
           '<div class="btn-row"><a class="btn btn-gold" href="' + esc(latest.url) + '">Read the report</a>' + (latest.pdfUrl ? '<a class="btn ffr-btn-light" href="' + esc(latest.pdfUrl) + '">Download PDF</a>' : '') + '</div></div>' +
           '<div class="ffr-glance"><span class="ffr-kicker">Coming up</span><ul>' + (kd.items || []).slice(0, 5).map(function (k) { return '<li><span>' + esc(when(k)) + '</span><span>' + esc(k.event) + '</span></li>'; }).join('') + '</ul></div></div>' : '') +
         '</div></section>' +
         '<section class="bg-cream"><div class="wrap"><div class="section-head"><h2>All <em>editions</em></h2><span class="link-arrow">' + items.length + ' editions</span></div>' +
         '<div class="ffr-hub-layout"><div>' + (types.length > 1 ? '<div class="ffr-hub-tabs" id="ffr-tabs"></div>' : '') + '<div id="ffr-list"></div></div>' +
         '<aside class="facts" style="position:sticky;top:96px"><h3>Get each edition</h3><p class="facts-note" style="margin:0 0 1rem">The Future Finance Report is published monthly, with weekly editions and daily briefs. Ask to join the distribution list.</p><a class="btn btn-gold" href="contact.html">Join the list</a>' +
-        '<dl><dt>Coverage</dt><dd>EU · UK · Asia-Pacific · Middle East · US and Canada · international standard setters</dd><dt>Share an edition</dt><dd>Every edition has a reference code, e.g. <b>' + esc(latest ? latest.code : 'FFM-2610') + '</b>.</dd></dl></aside></div></div></section>';
+        '<dl><dt>Coverage</dt><dd>EU · UK · Asia-Pacific · Middle East · US and Canada · international standard setters</dd><dt>Share an edition</dt><dd>Use “Copy link” on any edition page.</dd></dl></aside></div></div></section>';
       function list() {
         var rows = items.filter(function (i) { return !state.type || i.type === state.type; }), html = '', year = '';
         rows.forEach(function (c, k) {
@@ -197,11 +197,16 @@
       if (!latest) return;
       var recent = items.filter(function (i) { return i !== latest; }).slice(0, 3);
       el.className = 'ffr-home';
+      var blog = document.getElementById('home-insights');
+      if (blog) {
+        var prune = function () { blog.querySelectorAll('a[href*="future-finance"]').forEach(function (a) { a.remove(); }); };
+        new MutationObserver(prune).observe(blog, { childList: true }); prune();
+      }
       el.innerHTML = '<div class="lead-panel ffr-dark"><div style="display:flex;align-items:center;gap:.7rem">' + MARK + '<span class="ffr-kicker">' + esc(s.strapline) + '</span></div>' +
         '<h3>Future Finance <em>Report</em></h3><p><strong style="color:#fff">' + esc(latest.edition || latest.title) + '.</strong> ' + esc(latest.summary) + '</p>' +
         '<div class="btn-row"><a class="btn btn-gold" href="' + esc(latest.url) + '">Read the latest report</a><a class="btn ffr-btn-light" href="' + HUB + '">All editions</a></div></div>' +
         '<div class="list"><h4>Recent editions</h4>' + recent.map(function (c) {
-          return '<a class="ed" href="' + esc(c.url) + '"><span class="t">' + esc(c.edition || c.title) + '</span><span class="c">' + esc(c.code) + '</span><span class="d">' + esc(label(tx, 'types', c.type)) + ' · ' + short(c.date) + '</span></a>';
+          return '<a class="ed" href="' + esc(c.url) + '"><span class="t">' + esc(c.edition || c.title) + '</span><span class="c"></span><span class="d">' + esc(label(tx, 'types', c.type)) + ' · ' + short(c.date) + '</span></a>';
         }).join('') + '<a class="link-arrow all" href="' + HUB + '">Browse the archive &rarr;</a></div>';
     }).catch(function () { el.remove(); });
   }

@@ -1,6 +1,6 @@
 /* Future Finance Report pages for the Lunis Partners site.
  * Builds on the site's own assets/styles.css (variables --forest, --sage, --gold, --cream, --serif, --sans …,
- * and classes .wrap, .eyebrow, .btn, .card, .grid, .facts, .crumbs, .prose). Load after styles.css. */
+ * and classes .wrap, .eyebrow, .btn, .card, .grid, .facts, .crumbs, .prose). Load after styles.css. (File name kept distinct from the site’s own assets/ffr.js.) */
 
 /* ---------- shared ---------- */
 .ffr-dark { background: var(--forest, #1E2F2A); color: #fff; }
