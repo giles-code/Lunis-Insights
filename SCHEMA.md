@@ -62,6 +62,7 @@ The **code** is the permanent public reference. The share link is
 ## Body conventions (Markdown, GitHub-flavoured)
 
 - Start at `##`. Never use `#`; the page title comes from `title`.
+- Sub-groups inside `## Also noted` (e.g. "Stablecoins, CBDC and payments") are `###` headings, so they appear in the contents.
 - Monthly and weekly reports: `## Executive Summary`, then one `##` per region (`## European Union`, `## United Kingdom` …). Each entry is a numbered `### 1. EU — headline`. Finish with `## Also noted` and `## Horizon Scan …`.
 - Inside an entry, use bold run-in labels: `**Summary:**`, `**What it means for firms:**`, `**Timeline:**`, `**Assessment:**`.
 - Tables use pipe syntax. Links are inline. No images in the body for now.

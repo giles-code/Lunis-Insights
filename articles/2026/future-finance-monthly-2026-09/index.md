@@ -652,8 +652,7 @@ No standalone entry this month. FATF’s typology reports on professional money 
 
 Items carried at **Low** in the weekly editions and not absorbed into an entry above, grouped by theme. Dates are publication dates.
 
-**Stablecoins, CBDC and payments**
-
+### Stablecoins, CBDC and payments
 - **1 Sep — G20 Chair’s Statement (Asheville)** — paragraph 16 anticipates the FSB’s findings on cross-border stablecoin arrangements; paragraph 17 presses FATF on VA standards and scam compounds — [https://home.treasury.gov/news/press-releases/sb0620](https://home.treasury.gov/news/press-releases/sb0620)
 
 - **11 Sep — Bank of Japan** — CBDC pilot progress report (a 50,000 transactions-per-second mixed load in testing) and CBDC Forum record, including test issuance of CBDC-backed stablecoins — [https://www.boj.or.jp/en/paym/digital/dig260911a.pdf](https://www.boj.or.jp/en/paym/digital/dig260911a.pdf)
@@ -664,8 +663,7 @@ Items carried at **Low** in the weekly editions and not absorbed into an entry a
 
 - **24 Sep — SEC (Federal Register)** — Coinbase Derivatives security-futures margin filing; the exchange intends to accept payment stablecoins as margin if the SEC, CFTC or Federal Reserve change the rules or grant relief; comments due 15 October — Federal Register 2026-19512
 
-**Tokenisation and market infrastructure**
-
+### Tokenisation and market infrastructure
 - **8 Sep — HM Treasury** — Economic Secretary speech: DIGIT issuance in Q1 2027; 16 firms in the Digital Securities Sandbox — [https://www.gov.uk/government/speeches/economic-secretary-to-the-treasury-speech-at-uk-finance](https://www.gov.uk/government/speeches/economic-secretary-to-the-treasury-speech-at-uk-finance)
 
 - **8 Sep — CPMI-IOSCO** — FMI cyber resilience toolkit and third-party discussion paper; comments close 1 December — [https://www.iosco.org/news/pdf/IOSCONEWS802.pdf](https://www.iosco.org/news/pdf/IOSCONEWS802.pdf)
@@ -676,8 +674,7 @@ Items carried at **Low** in the weekly editions and not absorbed into an entry a
 
 - **23 Sep — SEC (Federal Register)** — security-futures rule filings by Coinbase Derivatives (including perpetual single-stock futures), Bitnomial and KalshiEX — Federal Register 2026-19407, 2026-19408, 2026-19409
 
-**Financial crime and enforcement**
-
+### Financial crime and enforcement
 - **1 Sep — FSA Japan** — warning letter to an unregistered crypto-asset exchange business — [https://www.fsa.go.jp/policy/virtual_currency02/index.html](https://www.fsa.go.jp/policy/virtual_currency02/index.html)
 
 - **3 Sep — JMLSG** — Part I revisions submitted to HM Treasury for ministerial approval — [https://www.jmlsg.org.uk/news/jmlsg-publishes-revisions-7/](https://www.jmlsg.org.uk/news/jmlsg-publishes-revisions-7/)
@@ -692,8 +689,7 @@ Items carried at **Low** in the weekly editions and not absorbed into an entry a
 
 - **Throughout — BaFin** — warnings on unauthorised crypto-asset services (1–4, 9, 11 and 24 September)
 
-**Prudential, licensing and supervisory**
-
+### Prudential, licensing and supervisory
 - **1 Sep (Federal Register) — OCC and FDIC** — unsafe or unsound practices final rule; its preamble cites the GENIUS Act as an example of a new law examiners must be able to test; effective 2 November — [https://www.federalregister.gov/documents/2026/09/01/2026-17823/unsafe-or-unsound-practices-matters-requiring-attention](https://www.federalregister.gov/documents/2026/09/01/2026-17823/unsafe-or-unsound-practices-matters-requiring-attention)
 
 - **2 Sep — ASIC** — “final call” before the 30 September deadline for firms relying on the digital-asset no-action position — [https://www.asic.gov.au/about-asic/news-centre/news-items/final-call-for-firms-to-act-before-asic-s-digital-asset-licensing-deadline](https://www.asic.gov.au/about-asic/news-centre/news-items/final-call-for-firms-to-act-before-asic-s-digital-asset-licensing-deadline)

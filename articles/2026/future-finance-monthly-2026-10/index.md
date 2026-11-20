@@ -1035,8 +1035,7 @@ The FSB’s note on global stablecoin arrangements (12 October), the Basel Commi
 
 Items carried at **Low** in the weekly editions, or found in the month-end check, and not absorbed into an entry above, grouped by theme. Dates are publication dates.
 
-**Stablecoins, CBDC and payments**
-
+### Stablecoins, CBDC and payments
 - **28 Sep — ECB** — call for expressions of interest in a new wave of digital euro innovation platform activities; deadline 17:00 CET on 9 November; experimentation January–June 2027 — [https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260928.en.html](https://www.ecb.europa.eu/press/intro/news/html/ecb.mipnews260928.en.html)
 
 - **29 Sep — Japan FSA** — FinTech PoC Hub support for a proof of concept on stablecoin use in trade settlement (TradeWaltz, NTT Data, Mizuho Bank, MUFG Bank, SMBC and Mitsubishi UFJ Trust) — [https://www.fsa.go.jp/news/r8/sonota/20260929-2/20260929.html](https://www.fsa.go.jp/news/r8/sonota/20260929-2/20260929.html)
@@ -1059,8 +1058,7 @@ Items carried at **Low** in the weekly editions, or found in the month-end check
 
 - **29 Oct (Federal Register) — OCC** — correction to the notice on the GENIUS Act licensing information collection; comments close 23 November — Federal Register 2026-22036
 
-**Tokenisation and market infrastructure**
-
+### Tokenisation and market infrastructure
 - **29 Sep — HKSAR Government** — fourth digital green bond, about HK\$20 billion, described as the first digital bond to integrate HKD tokenised deposits (market development, not a rule) — [https://www.info.gov.hk/gia/general/202609/29/P2026092900691.htm](https://www.info.gov.hk/gia/general/202609/29/P2026092900691.htm)
 
 - **30 Sep — Japan FSA** — first meeting of the On-Chain Finance Forum, chaired by the Minister for financial services — [https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930.html](https://www.fsa.go.jp/singi/ai_onchain/shiryou/20260930.html)
@@ -1093,8 +1091,7 @@ Items carried at **Low** in the weekly editions, or found in the month-end check
 
 - **29 Oct — Bank of England** — approach to tokenised collateral in central clearing: consultation on supervisory expectations for CCPs, closing 12 February 2027 — [https://www.bankofengland.co.uk/news/2026/october/bank-of-england-sets-out-approach-to-tokenised-collateral-in-central-clearing](https://www.bankofengland.co.uk/news/2026/october/bank-of-england-sets-out-approach-to-tokenised-collateral-in-central-clearing)
 
-**Financial crime and enforcement**
-
+### Financial crime and enforcement
 - **27 Sep — California** — Governor signed AB 2409 (digital assets: meme coins) and SB 1208 (money laundering: digital assets) — [https://www.gov.ca.gov/2026/09/27/the-opposite-of-trump-governor-newsom-signs-bills-to-crack-down-on-corruption-including-meme-coins-by-public-officials/](https://www.gov.ca.gov/2026/09/27/the-opposite-of-trump-governor-newsom-signs-bills-to-crack-down-on-corruption-including-meme-coins-by-public-officials/)
 
 - **29 Sep — SEC** — charges in two AI trading-signal and trading-bot frauds totalling at least USD 15 million (Release 2026-95) — [https://www.sec.gov/newsroom/press-releases/2026-95-sec-charges-multiple-entities-fraud-schemes-totaling-least-15-million-used-whatsapp-other-platforms](https://www.sec.gov/newsroom/press-releases/2026-95-sec-charges-multiple-entities-fraud-schemes-totaling-least-15-million-used-whatsapp-other-platforms)
@@ -1117,8 +1114,7 @@ Items carried at **Low** in the weekly editions, or found in the month-end check
 
 - **29 Oct — SEC** — two entities charged in a USD 130 million fraud promising returns from crypto asset trading signals (Release 2026-110) — [https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence](https://www.sec.gov/newsroom/press-releases/2026-110-two-entities-charged-130-million-fraud-scheme-used-false-sec-filings-boost-investor-confidence)
 
-**Prudential, licensing and supervisory**
-
+### Prudential, licensing and supervisory
 - **28 Sep — ESMA** — 2027 Annual Work Programme: supervisory convergence on CASPs under MiCA; tokenisation remains a priority — [https://www.esma.europa.eu/press-news/esma-news/esma-sets-2027-priorities-stronger-simpler-and-more-integrated-eu-capital](https://www.esma.europa.eu/press-news/esma-news/esma-sets-2027-priorities-stronger-simpler-and-more-integrated-eu-capital)
 
 - **30 Sep — EBA** — 2027 Work Programme: MiCA supervision, 2027 significance assessment of EMTs and ARTs, monitoring of ART and EMT use in DeFi — [https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-2027-work-programme](https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-its-2027-work-programme)
